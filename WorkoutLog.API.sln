@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutLog", "WorkoutLog\WorkoutLog.csproj", "{120A7D4B-FC3E-4295-AEEB-1462177E480F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkoutLog.API", "WorkoutLog.API\WorkoutLog.API.csproj", "{0E7F7C60-44DA-48ED-80F4-2012A7DC027E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{120A7D4B-FC3E-4295-AEEB-1462177E480F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{120A7D4B-FC3E-4295-AEEB-1462177E480F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{120A7D4B-FC3E-4295-AEEB-1462177E480F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{120A7D4B-FC3E-4295-AEEB-1462177E480F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E7F7C60-44DA-48ED-80F4-2012A7DC027E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E7F7C60-44DA-48ED-80F4-2012A7DC027E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E7F7C60-44DA-48ED-80F4-2012A7DC027E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E7F7C60-44DA-48ED-80F4-2012A7DC027E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
