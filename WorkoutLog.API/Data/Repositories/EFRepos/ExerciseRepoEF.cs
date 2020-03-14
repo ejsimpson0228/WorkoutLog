@@ -32,14 +32,34 @@ namespace WorkoutLog.API.Data.Repositories.EFRepos
             }
         }
 
-        public Task<bool> DeleteExercise(int exerciseId)
+        public async Task<bool> DeleteExercise(int exerciseId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var exerciseToDelete = await _db.Exercises.FirstOrDefaultAsync(e => e.Id == exerciseId);
+                _db.Remove(exerciseToDelete);
+                return await _db.SaveChangesAsync() > 0;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
         }
 
-        public Task<Exercise> EditExercise(int exerciseId, Exercise updatedExercise)
+        public async Task<Exercise> EditExercise(int exerciseId, Exercise updatedExercise)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var exerciseToEdit = await _db.Exercises.FirstOrDefaultAsync(e => e.Id == exerciseId);
+                exerciseToEdit = updatedExercise;
+                exerciseToEdit.Id = exerciseId;
+                return await _db.SaveChangesAsync() > 0 ? exerciseToEdit : null;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
     }
 }

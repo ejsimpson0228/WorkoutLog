@@ -9,7 +9,7 @@ namespace WorkoutLog.API.Data.Interfaces
     public interface IWorkoutRepo
     {
         Task<Workout> CreateWorkout(Workout workout);
-        Task<Workout> AddExerciseToWorkout(Exercise exercise);
+        Task<Workout> AddExerciseToWorkout(int WorkoutId, Exercise exercise);
         Task<Workout> EditWorkout(int workoutId, Workout updatedWorkout);
         Task<bool> DeleteWorkout(int workoutId);
     }
