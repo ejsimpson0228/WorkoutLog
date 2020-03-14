@@ -1,8 +1,23 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200313173345_init.cs" />
+    <Compile Remove="Migrations\20200313173345_init.Designer.cs" />
+    <Compile Remove="Migrations\20200314121319_ef_models_create.cs" />
+    <Compile Remove="Migrations\20200314121319_ef_models_create.Designer.cs" />
+    <Compile Remove="Migrations\20200314121839_ef_models_create.cs" />
+    <Compile Remove="Migrations\20200314121839_ef_models_create.Designer.cs" />
+    <Compile Remove="Migrations\20200314122005_ef_models_create.cs" />
+    <Compile Remove="Migrations\20200314122005_ef_models_create.Designer.cs" />
+    <Compile Remove="Migrations\20200314123855_ef_models_create.cs" />
+    <Compile Remove="Migrations\20200314123855_ef_models_create.Designer.cs" />
+    <Compile Remove="Migrations\20200314130154_init.cs" />
+    <Compile Remove="Migrations\20200314130154_init.Designer.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.2" />
