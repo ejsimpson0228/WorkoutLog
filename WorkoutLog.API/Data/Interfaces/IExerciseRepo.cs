@@ -8,8 +8,8 @@ namespace WorkoutLog.API.Data.Interfaces
 {
     public interface IExerciseRepo
     {
-        Exercise CreateExercies(Exercise exercise);
-        Exercise EditExercise(int exerciseId, Exercise updatedExercise);
-        void DeleteExercie(int exerciseId);
+        Task<Exercise> CreateExercise(Exercise exercise);
+        Task<Exercise> EditExercise(int exerciseId, Exercise updatedExercise);
+        Task<bool> DeleteExercise(int exerciseId);
     }
 }

@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Serialization;
+using WorkoutLog.API.Data.Interfaces;
+using WorkoutLog.API.Data.Repositories.EFRepos;
 using WorkoutLog.API.Models;
 
 namespace WorkoutLog
@@ -43,6 +45,11 @@ namespace WorkoutLog
 
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<DatabaseContext>();
+
+            services.AddScoped<IExerciseRepo, ExerciseRepoEF>();
+            services.AddScoped<IWorkoutLoggingRepo, WorkoutLoggingRepoEF>();
+            services.AddScoped<IWorkoutProgramRepo, WorkoutProgramRepoEF>();
+            services.AddScoped<IWorkoutRepo, WorkoutRepoEF>();
 
             var key = Encoding.UTF8.GetBytes(Configuration["ApplicationSettings:JWT_Secret"].ToString()); // random string
 

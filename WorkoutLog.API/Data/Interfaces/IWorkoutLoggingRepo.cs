@@ -8,9 +8,9 @@ namespace WorkoutLog.API.Data.Interfaces
 {
     public interface IWorkoutLoggingRepo
     {
-        IEnumerable<Log> GetLogs(string userId);
-        Log LogExercise(Exercise exerciseToLog, DateTime dateLogged);
-        Log EditLog(int logId, Log updatedLog);
-        void DeleteLog(int logId);
+        Task<IEnumerable<Log>> GetLogs(string userId);
+        Task<Log> LogExercise(Exercise exerciseToLog, DateTime dateLogged);
+        Task<Log> EditLog(int logId, Log updatedLog);
+        Task<bool> DeleteLog(int logId);
     }
 }

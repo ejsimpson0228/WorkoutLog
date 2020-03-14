@@ -8,10 +8,10 @@ namespace WorkoutLog.API.Data.Interfaces
 {
     public interface IWorkoutProgramRepo
     {
-        WorkoutProgram CreateProgram(Program program);
-        WorkoutProgram EditProgram(int programId, Program updatedProgram);
-        void DeleteProgram(int programId);
-        IEnumerable<WorkoutProgram> GetUserPrograms(string userId);
-        WorkoutProgram AddWorkoutToProgram(int programId, Workout workoutToAdd);
+        Task<WorkoutProgram> CreateProgram(Program program);
+        Task<WorkoutProgram> EditProgram(int programId, Program updatedProgram);
+        Task<bool> DeleteProgram(int programId);
+        Task<IEnumerable<WorkoutProgram>> GetUserPrograms(string userId);
+        Task<WorkoutProgram> AddWorkoutToProgram(int programId, Workout workoutToAdd);
     }
 }
