@@ -2,3 +2,4 @@
 ###################
 *appsettings.json
 *appsettings.development.json
+*environment.prod.ts
