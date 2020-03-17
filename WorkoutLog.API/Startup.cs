@@ -40,6 +40,8 @@ namespace WorkoutLog
                     options.JsonSerializerOptions.PropertyNamingPolicy = null;
                 });
 
+            services.Configure<ApplicationSettings>(Configuration.GetSection("ApplicationSettings"));
+
             services.AddDbContext<DatabaseContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -52,6 +54,16 @@ namespace WorkoutLog
             services.AddScoped<IWorkoutRepo, WorkoutRepoEF>();
 
             var key = Encoding.UTF8.GetBytes(Configuration["ApplicationSettings:JWT_Secret"].ToString()); // random string
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequiredLength = 7;
+            }
+            );
 
             services.AddAuthentication(x =>
             {

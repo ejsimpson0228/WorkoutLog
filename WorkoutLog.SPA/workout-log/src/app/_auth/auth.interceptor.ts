@@ -1,8 +1,9 @@
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { Injectable } from '@angular/core';
 
-
+@Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
     constructor(private router: Router) {}
@@ -13,7 +14,7 @@ export class AuthInterceptor implements HttpInterceptor {
             const clonedReq = req.clone({
                 headers: req.headers.set('Authorization', 'Bearer ' + idToken)
             });
-            return next.handle(clonedReq)
+            return next.handle(clonedReq);
         } else {
             return next.handle(req.clone());
         }

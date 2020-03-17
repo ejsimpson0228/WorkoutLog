@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+
+.white-text {
+    color: white;
+}
+
+.dark-text {
+    color: #343a40;
+}
+
+.text-header {
+    border-bottom: 1px solid #343a40;
+}
+
+.warning-text {
+    color: #750012;
+    font: bold !important;
+}
+
+
+
+.btn:disabled {
+    opacity: 0.3;
+}
